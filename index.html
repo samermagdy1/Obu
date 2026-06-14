@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<title>سكنى | Sakny – العبور والعبور الجديدة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0B3D5E;--navy-d:#072A42;--blue:#1E7BAA;
+  --gold:#E6A817;--gold-l:#F5C842;--gold-p:#FEF3CC;
+  --green:#1E8A5A;--green-l:#27A86E;--green-p:#E6F7EE;
+  --wa:#25D366;
+  --bg:#F4F6F9;--surf:#FFFFFF;--bdr:#E2E8F0;
+  --txt:#131B25;--mid:#4A5568;--soft:#8A97A8;
+  --r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-pill:999px;
+  --sh-sm:0 2px 8px rgba(0,0,0,.07);--sh-md:0 6px 24px rgba(0,0,0,.1);--sh-lg:0 16px 48px rgba(0,0,0,.13);
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:15px}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;overflow-x:hidden}
+img{max-width:100%;display:block}
+button,a{cursor:pointer}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:4px}
+.container{max-width:1180px;margin:0 auto;padding:0 16px}
+@media(min-width:960px){.container{padding:0 32px}}
+
+/* HEADER */
+#hdr{position:sticky;top:0;z-index:600;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1.5px solid transparent;transition:border-color .2s,box-shadow .2s}
+#hdr.scrolled{border-bottom-color:var(--bdr);box-shadow:var(--sh-sm)}
+.hdr-row{display:flex;align-items:center;gap:10px;height:62px}
+.logo{text-decoration:none;display:flex;align-items:center;gap:9px;flex-shrink:0}
+.logo-ic{width:38px;height:38px;flex-shrink:0}
+.logo-tx{display:flex;flex-direction:column;line-height:1}
+.logo-ar{font-family:'Tajawal',sans-serif;font-size:20px;font-weight:900;color:var(--navy);display:flex;align-items:center;gap:5px}
+.logo-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;transform:translateY(-1px)}
+.logo-tag{font-size:9px;font-weight:700;color:var(--soft);letter-spacing:.5px}
+.hdr-loc{display:none;align-items:center;gap:5px;background:var(--gold-p);color:var(--navy);border-radius:var(--r-pill);padding:4px 12px;font-size:11px;font-weight:700;border:1px solid rgba(230,168,23,.3);flex-shrink:0;white-space:nowrap}
+@media(min-width:480px){.hdr-loc{display:flex}}
+.hdr-srch{flex:1;position:relative;display:none}
+@media(min-width:600px){.hdr-srch{display:flex}}
+.hdr-srch input{width:100%;height:38px;background:var(--bg);border:1.5px solid var(--bdr);border-radius:var(--r-pill);padding:0 42px 0 14px;font-family:'Cairo',sans-serif;font-size:13.5px;color:var(--txt);outline:none;direction:rtl;transition:border-color .15s,box-shadow .15s}
+.hdr-srch input:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,61,94,.1)}
+.hdr-srch input::placeholder{color:var(--soft)}
+.s-ic{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:16px;pointer-events:none;color:var(--soft)}
+.hdr-nav{display:none;align-items:center;gap:2px}
+@media(min-width:900px){.hdr-nav{display:flex}}
+.hdr-nav a{font-size:13px;font-weight:700;color:var(--mid);text-decoration:none;padding:5px 10px;border-radius:var(--r-sm);transition:color .15s,background .15s;white-space:nowrap}
+.hdr-nav a:hover{color:var(--navy);background:var(--bg)}
+.nav-cta{background:var(--gold);color:var(--navy)!important;border-radius:var(--r-pill);padding:6px 14px;font-weight:900}
+.nav-cta:hover{background:var(--gold-l)!important}
+.hbg{background:none;border:none;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:var(--r-sm)}
+@media(min-width:900px){.hbg{display:none}}
+.hbg-in{display:flex;flex-direction:column;gap:4.5px}
+.hbg-in span{display:block;width:20px;height:2px;background:var(--txt);border-radius:2px;transition:all .28s var(--ease)}
+.hbg.open .hbg-in span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hbg.open .hbg-in span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbg.open .hbg-in span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mob-srch{padding:0 16px 10px;display:block}
+@media(min-width:600px){.mob-srch{display:none}}
+.mob-srch input{width:100%;height:38px;background:var(--bg);border:1.5px solid var(--bdr);border-radius:var(--r-pill);padding:0 42px 0 14px;font-family:'Cairo',sans-serif;font-size:13.5px;outline:none;direction:rtl;transition:border-color .15s}
+.mob-srch input:focus{border-color:var(--navy)}
+.mob-srch .ms-w{position:relative}
+.mob-srch .s-ic{right:12px;top:50%;transform:translateY(-50%);position:absolute;font-size:16px;color:var(--soft)}
+
+/* DRAWER */
+.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:800;opacity:0;pointer-events:none;transition:opacity .28s}
+.backdrop.on{opacity:1;pointer-events:all}
+.drawer{position:fixed;top:0;right:-290px;width:290px;height:100dvh;background:#fff;z-index:900;transition:right .3s var(--ease);display:flex;flex-direction:column;box-shadow:var(--sh-lg)}
+.drawer.open{right:0}
+.drw-hd{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--bdr)}
+.drw-cl{background:none;border:none;width:34px;height:34px;border-radius:var(--r-sm);font-size:18px;color:var(--mid);display:flex;align-items:center;justify-content:center}
+.drw-cl:hover{background:var(--bg)}
+.drw-lnks{flex:1;overflow-y:auto;padding:4px 0}
+.drw-lnks a{display:flex;align-items:center;gap:11px;padding:12px 18px;text-decoration:none;font-size:13.5px;font-weight:700;color:var(--txt);border-bottom:1px solid var(--bg);transition:background .15s,color .15s}
+.drw-lnks a:hover{background:var(--bg);color:var(--navy)}
+.drw-lnks a span:first-child{font-size:17px}
+.drw-join{margin:10px 18px;background:var(--gold);color:var(--navy);border:none;border-radius:var(--r-pill);height:44px;font-family:'Cairo',sans-serif;font-size:13.5px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px}
+.drw-wa{margin:0 18px 18px;background:var(--wa);color:#fff;border:none;border-radius:var(--r-pill);height:42px;font-family:'Cairo',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none}
+
+/* HERO */
+#hero{background:linear-gradient(148deg,var(--navy) 0%,var(--navy-d) 100%);padding:52px 0 60px;position:relative;overflow:hidden}
+.h-glow{position:absolute;border-radius:50%;pointer-events:none}
+.h-glow-1{width:420px;height:420px;background:radial-gradient(circle,rgba(230,168,23,.16) 0%,transparent 70%);top:-100px;left:-60px;animation:gDrift 11s ease-in-out infinite alternate}
+.h-glow-2{width:280px;height:280px;background:radial-gradient(circle,rgba(30,123,170,.22) 0%,transparent 70%);bottom:-60px;right:-40px;animation:gDrift 8s ease-in-out 3s infinite alternate-reverse}
+@keyframes gDrift{from{transform:translate(0,0)}to{transform:translate(28px,-18px)}}
+@media(prefers-reduced-motion:reduce){.h-glow{animation:none}}
+.hero-in{position:relative;z-index:2;text-align:center}
+.hero-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(230,168,23,.16);border:1px solid rgba(230,168,23,.38);color:var(--gold-l);border-radius:var(--r-pill);padding:5px 16px;font-size:12.5px;font-weight:700;margin-bottom:16px;animation:fUp .5s both}
+.hero-h1{font-family:'Tajawal',sans-serif;font-size:clamp(24px,6vw,46px);font-weight:900;color:#fff;line-height:1.22;margin-bottom:10px;animation:fUp .6s .09s both}
+.hero-h1 em{color:var(--gold-l);font-style:normal}
+.hero-sub{font-size:clamp(12.5px,3.5vw,15.5px);color:rgba(255,255,255,.68);margin-bottom:28px;animation:fUp .6s .18s both}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:36px;animation:fUp .6s .26s both}
+.btn-gold{background:var(--gold);color:var(--navy);border:none;border-radius:var(--r-pill);padding:11px 22px;font-family:'Cairo',sans-serif;font-size:13.5px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background .15s,transform .15s,box-shadow .15s}
+.btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 22px rgba(230,168,23,.4)}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.32);border-radius:var(--r-pill);padding:11px 22px;font-family:'Cairo',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;backdrop-filter:blur(6px);transition:background .15s,transform .15s}
+.btn-ghost:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+.btn-join-h{background:transparent;color:var(--gold-l);border:1.5px solid rgba(230,168,23,.45);border-radius:var(--r-pill);padding:11px 22px;font-family:'Cairo',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background .15s,transform .15s}
+.btn-join-h:hover{background:rgba(230,168,23,.14);transform:translateY(-2px)}
+.hero-pills{display:flex;gap:8px;justify-content:center;flex-wrap:nowrap;overflow-x:auto;padding:0 8px 4px;scrollbar-width:none;animation:fUp .7s .34s both}
+.hero-pills::-webkit-scrollbar{display:none}
+.h-pill{background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.2);border-radius:var(--r-md);padding:9px 13px;min-width:76px;text-align:center;flex-shrink:0;cursor:pointer;transition:background .15s;animation:floatY 3.5s ease-in-out infinite}
+.h-pill:hover{background:rgba(255,255,255,.22)}
+.h-pill:nth-child(2){animation-delay:.5s}.h-pill:nth-child(3){animation-delay:1s}.h-pill:nth-child(4){animation-delay:1.5s}.h-pill:nth-child(5){animation-delay:2s}.h-pill:nth-child(6){animation-delay:2.5s}
+.p-ic{font-size:22px;margin-bottom:2px}.p-lb{font-size:10px;color:rgba(255,255,255,.88);font-weight:700}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media(prefers-reduced-motion:reduce){.h-pill{animation:none}}
+.hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:0;margin-top:34px;animation:fUp .7s .42s both}
+.stat{text-align:center;padding:8px 20px;border-left:1px solid rgba(255,255,255,.16)}
+.stat:last-child{border-left:none}
+.stat-n{font-size:26px;font-weight:900;color:var(--gold-l);line-height:1;font-family:'Tajawal',sans-serif}
+.stat-l{font-size:10.5px;color:rgba(255,255,255,.58);font-weight:600}
+@keyframes fUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* SEC HEADER */
+.sec-hd{text-align:center;margin-bottom:28px}
+.sec-eye{font-size:10.5px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;color:var(--gold)}
+.sec-ttl{font-family:'Tajawal',sans-serif;font-size:clamp(19px,4.5vw,28px);font-weight:900;color:var(--txt)}
+.sec-sub{font-size:13.5px;color:var(--mid);margin-top:5px}
+.sec-eye.grn{color:var(--green)}.sec-ttl.grn{color:var(--green)}
+.sec-eye.nvy{color:var(--navy)}.sec-ttl.nvy{color:var(--navy)}
+
+/* JOIN BAND */
+#jband{background:#fff;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:38px 0}
+.jb-in{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+@media(min-width:640px){.jb-in{flex-direction:row;justify-content:space-between;text-align:right;gap:28px}}
+.jb-ic{font-size:40px;flex-shrink:0}
+.jb-tx{flex:1}
+.jb-ttl{font-family:'Tajawal',sans-serif;font-size:clamp(16px,3.5vw,20px);font-weight:900;color:var(--txt);margin-bottom:3px}
+.jb-sub{font-size:13px;color:var(--mid)}
+.jb-btns{display:flex;flex-direction:column;gap:9px;flex-shrink:0}
+@media(min-width:400px){.jb-btns{flex-direction:row}}
+.btn-navy{background:var(--navy);color:#fff;border:none;border-radius:var(--r-pill);padding:11px 22px;font-family:'Cairo',sans-serif;font-size:13.5px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background .15s,transform .15s}
+.btn-navy:hover{background:var(--blue);transform:translateY(-1px)}
+.btn-wa-o{background:transparent;color:var(--wa);border:2px solid var(--wa);border-radius:var(--r-pill);padding:10px 20px;font-family:'Cairo',sans-serif;font-size:13.5px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background .15s,color .15s,transform .15s}
+.btn-wa-o:hover{background:var(--wa);color:#fff;transform:translateY(-1px)}
+
+/* CATEGORIES */
+#cats{padding:48px 0 18px}
+.cats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:580px){.cats-grid{grid-template-columns:repeat(4,1fr);gap:14px}}
+.cat-card{background:#fff;border-radius:var(--r-lg);padding:18px 12px 14px;cursor:pointer;border:2px solid transparent;box-shadow:var(--sh-sm);transition:transform .15s,box-shadow .15s,border-color .15s;position:relative;overflow:hidden;text-align:right}
+.cat-card:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
+.cat-card.on{border-color:var(--cc,var(--navy));box-shadow:var(--sh-md)}
+.cat-strip{position:absolute;top:0;right:0;width:4px;height:100%;background:var(--cc,var(--navy))}
+.cat-ic{font-size:30px;margin-bottom:7px}.cat-nm{font-size:13.5px;font-weight:800;color:var(--txt);margin-bottom:2px}
+.cat-bdg{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:var(--r-pill);background:color-mix(in srgb,var(--cc,var(--navy)) 11%,transparent);color:var(--cc,var(--navy));margin-bottom:5px}
+.cat-cnt{font-size:10.5px;color:var(--soft)}
+.cat-arr{position:absolute;top:50%;left:11px;transform:translateY(-50%);font-size:15px;color:var(--soft);transition:transform .15s,color .15s}
+.cat-card:hover .cat-arr,.cat-card.on .cat-arr{transform:translateY(-50%) translateX(-3px);color:var(--cc,var(--navy))}
+[data-cat="furniture"]{--cc:var(--navy)}[data-cat="appliances"]{--cc:#C05700}[data-cat="lighting"]{--cc:#6C3FB5}[data-cat="workers"]{--cc:var(--green)}
+
+/* LISTINGS */
+#listings{padding:6px 0 56px}
+.lst-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:10px;flex-wrap:wrap}
+.lst-ttl{font-family:'Tajawal',sans-serif;font-size:17px;font-weight:900;color:var(--txt)}
+.lst-cnt{font-size:12.5px;color:var(--soft)}
+.lst-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;transition:opacity .18s,transform .18s}
+@media(min-width:540px){.lst-grid{gap:14px}}
+@media(min-width:860px){.lst-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1120px){.lst-grid{grid-template-columns:repeat(4,1fr)}}
+.lst-grid.fading{opacity:0;transform:translateY(6px)}
+.lcard{background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-sm);border:1.5px solid var(--bdr);overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s,border-color .15s;animation:fUp .32s both}
+.lcard:hover{transform:translateY(-3px) scale(1.01);box-shadow:var(--sh-md);border-color:var(--blue)}
+.lcard:nth-child(1){animation-delay:.04s}.lcard:nth-child(2){animation-delay:.08s}.lcard:nth-child(3){animation-delay:.12s}.lcard:nth-child(4){animation-delay:.16s}.lcard:nth-child(5){animation-delay:.20s}.lcard:nth-child(6){animation-delay:.24s}
+.card-imgs{position:relative;height:172px;overflow:hidden;background:var(--bg);cursor:pointer}
+@media(min-width:540px){.card-imgs{height:190px}}
+.card-sk{position:absolute;inset:0;background:linear-gradient(90deg,#f0f0f0 25%,#e8e8e8 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;z-index:0}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.card-iw{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:40px;position:relative;z-index:1;transition:transform .4s var(--ease)}
+.card-iw img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s,opacity .3s;opacity:0;position:absolute;inset:0}
+.card-iw img.loaded{opacity:1}
+.card-iw .fb-ic{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:44px;z-index:1}
+.card-imgs:hover .card-iw{transform:scale(1.05)}
+.card-iw.furniture{background:linear-gradient(135deg,#E8F4FB,#C8E4F5)}.card-iw.appliances{background:linear-gradient(135deg,#FEF7E6,#FDEBD0)}.card-iw.lighting{background:linear-gradient(135deg,#F3EEF8,#E5D8F4)}.card-iw.workers{background:linear-gradient(135deg,#E8F8F0,#D0F0E0)}
+.card-dots{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);display:flex;gap:4px;z-index:3}
+.card-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:background .15s,transform .15s}
+.card-dot.on{background:#fff;transform:scale(1.3)}
+.card-ctr{position:absolute;bottom:7px;left:7px;background:rgba(0,0,0,.5);color:#fff;border-radius:var(--r-pill);padding:2px 8px;font-size:10.5px;font-weight:700;backdrop-filter:blur(4px)}
+.wk-badge{position:absolute;bottom:7px;right:7px;background:rgba(14,138,122,.85);color:#fff;border-radius:var(--r-pill);padding:3px 9px;font-size:10.5px;font-weight:700;backdrop-filter:blur(4px);z-index:2}
+.cond-badge{position:absolute;top:8px;right:8px;font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:var(--r-pill)}
+.cond-new{background:#E6F7EE;color:var(--green)}.cond-used{background:#FEF5E7;color:#C05700}.cond-svc{background:#EAF2FF;color:#1A5FB4}
+.card-body{padding:11px;flex:1;display:flex;flex-direction:column;gap:3px}
+.card-ttl{font-size:13px;font-weight:800;color:var(--txt);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.cat-pill{font-size:10px;font-weight:700;padding:2px 7px;border-radius:var(--r-pill)}
+.cat-pill.furniture{background:#EBF5FB;color:var(--navy)}.cat-pill.appliances{background:#FEF5E7;color:#C05700}.cat-pill.lighting{background:#F3EEF8;color:#6C3FB5}.cat-pill.workers{background:#E8F8F0;color:var(--green)}
+.loc-tag{font-size:10px;color:var(--soft)}.stars{color:var(--gold);font-size:10.5px}.rev-cnt{font-size:10px;color:var(--soft)}
+.card-price{font-size:15px;font-weight:900;color:var(--navy);margin-top:auto;padding-top:2px}
+.price-call{font-size:12px;font-weight:700;color:var(--mid)}
+.wa-cbtn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;height:40px;background:var(--wa);color:#fff;border:none;border-radius:0 0 var(--r-lg) var(--r-lg);font-family:'Cairo',sans-serif;font-size:12.5px;font-weight:700;cursor:pointer;transition:background .15s;margin-top:9px;flex-shrink:0}
+.wa-cbtn:hover{background:#1DA851}
+.empty-st{grid-column:1/-1;text-align:center;padding:56px 20px}
+.empty-ic{font-size:48px;margin-bottom:10px}.empty-ttl{font-size:17px;font-weight:800;margin-bottom:5px}.empty-sub{font-size:13.5px;color:var(--mid);margin-bottom:18px}
+
+/* LIGHTBOX */
+#lb{position:fixed;inset:0;z-index:2000;background:#000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility 0s linear .2s;touch-action:none}
+#lb.open{visibility:visible;pointer-events:all;transition:opacity .2s}
+#lb.vis{opacity:1}
+.lb-w{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lb-w img{width:100%;height:100%;object-fit:contain;display:block;opacity:0;transition:opacity .28s;user-select:none;-webkit-user-drag:none}
+.lb-w img.lb-ok{opacity:1}
+.lb-w .lb-em{font-size:min(18vw,110px);user-select:none}
+.lb-ldr{position:absolute;inset:0;background:linear-gradient(90deg,#111 25%,#222 50%,#111 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;z-index:1;transition:opacity .22s}
+.lb-ldr.hidden{opacity:0;pointer-events:none}
+.lb-cl{position:absolute;top:max(14px,env(safe-area-inset-top));left:14px;z-index:10;background:rgba(0,0,0,.5);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-size:17px;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(8px);transition:background .15s,transform .15s}
+.lb-cl:hover{background:rgba(255,255,255,.18);transform:scale(1.07)}
+.lb-ctr{position:absolute;top:max(14px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:10;background:rgba(0,0,0,.48);color:rgba(255,255,255,.82);border-radius:var(--r-pill);padding:5px 14px;font-size:12.5px;font-weight:700;backdrop-filter:blur(8px);white-space:nowrap;pointer-events:none}
+.lb-ctr:empty{display:none}
+.lb-wa{position:absolute;bottom:max(18px,env(safe-area-inset-bottom,18px));left:50%;transform:translateX(-50%);z-index:10;background:var(--wa);color:#fff;border:none;border-radius:var(--r-pill);height:46px;padding:0 26px;font-family:'Cairo',sans-serif;font-size:13.5px;font-weight:900;cursor:pointer;display:flex;align-items:center;gap:7px;box-shadow:0 4px 18px rgba(37,211,102,.5);transition:background .15s,transform .15s;white-space:nowrap}
+.lb-wa:hover{background:#1DA851;transform:translateX(-50%) translateY(-2px)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(0,0,0,.42);border:1.5px solid rgba(255,255,255,.18);color:#fff;width:48px;height:48px;border-radius:50%;font-size:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(8px);transition:background .15s;user-select:none}
+.lb-nav:hover{background:rgba(255,255,255,.18)}.lb-nav:active{transform:translateY(-50%) scale(.93)}
+.lb-prev{right:12px}.lb-next{left:12px}.lb-nav[hidden]{display:none}
+@media(max-width:480px){.lb-nav{width:42px;height:42px;font-size:20px}.lb-prev{right:7px}.lb-next{left:7px}}
+
+/* WASTE */
+#waste{padding:60px 0;background:linear-gradient(158deg,#f0faf1 0%,#e8f5ea 55%,#f5fff6 100%);position:relative;overflow:hidden}
+#waste::before{content:'';position:absolute;top:-50px;left:-50px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(30,138,90,.07) 0%,transparent 70%);pointer-events:none}
+#waste::after{content:'';position:absolute;bottom:-70px;right:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(39,168,110,.06) 0%,transparent 70%);pointer-events:none}
+.waste-in{position:relative;z-index:2}
+.w-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(30,138,90,.11);border:1px solid rgba(30,138,90,.22);color:var(--green);border-radius:var(--r-pill);padding:4px 14px;font-size:11px;font-weight:800;margin-bottom:24px}
+.waste-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:28px}
+@media(min-width:580px){.waste-grid{grid-template-columns:repeat(4,1fr);gap:16px}}
+.wcard{background:#fff;border-radius:var(--r-lg);padding:20px 14px 16px;text-align:center;border:2px solid var(--wc,#ddd);box-shadow:var(--sh-sm);transition:transform .15s,box-shadow .15s,border-color .15s;cursor:pointer;position:relative;overflow:hidden}
+.wcard:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
+.wcard.sel{border-color:var(--wc);box-shadow:0 0 0 3px color-mix(in srgb,var(--wc) 18%,transparent),var(--sh-md)}
+.wc-glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,color-mix(in srgb,var(--wc,#ddd) 13%,transparent) 0%,transparent 70%);pointer-events:none}
+.wc-chk{position:absolute;top:9px;left:9px;width:24px;height:24px;border-radius:50%;background:var(--wc);color:#fff;display:none;align-items:center;justify-content:center;font-size:13px}
+.wcard.sel .wc-chk{display:flex}
+.w-ic{width:62px;height:62px;border-radius:50%;background:color-mix(in srgb,var(--wc) 11%,white);border:2px solid color-mix(in srgb,var(--wc) 26%,transparent);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:28px;transition:transform .15s}
+.wcard:hover .w-ic{transform:scale(1.08) rotate(-4deg)}
+.wcard-nm{font-size:14.5px;font-weight:800;color:var(--txt);margin-bottom:4px}
+.wcard-types{font-size:10.5px;color:var(--mid);line-height:1.5}
+[data-waste="glass"]{--wc:#1A7BBD}[data-waste="paper"]{--wc:#C67A1C}[data-waste="metal"]{--wc:#6B7280}[data-waste="plastic"]{--wc:#2D7D3A}
+
+/* Waste info box */
+.waste-info{background:#fff;border-radius:var(--r-lg);padding:26px 22px;box-shadow:var(--sh-sm);border:1.5px solid rgba(30,138,90,.18);margin-bottom:24px}
+.wi-ttl{font-family:'Tajawal',sans-serif;font-size:17px;font-weight:900;color:var(--green);margin-bottom:6px}
+.wi-sub{font-size:13px;color:var(--mid);line-height:1.8;margin-bottom:16px}
+.w-note{display:flex;align-items:flex-start;gap:10px;background:var(--gold-p);border:1px solid rgba(230,168,23,.35);border-radius:var(--r-md);padding:11px 14px;font-size:12.5px;color:var(--txt);line-height:1.7;margin-bottom:20px}
+.w-note .n-ic{font-size:19px;flex-shrink:0;margin-top:1px}
+.waste-steps{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:600px){.waste-steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.waste-steps{grid-template-columns:repeat(4,1fr)}}
+.wstep{display:flex;align-items:flex-start;gap:11px}
+.ws-num{width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;font-size:12.5px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ws-ttl{font-size:13px;font-weight:800;color:var(--txt);margin-bottom:2px}
+.ws-txt{font-size:12px;color:var(--mid);line-height:1.6}
+.waste-cta-row{display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-top:24px}
+@media(min-width:580px){.waste-cta-row{flex-direction:row;align-items:center}}
+.wc-txt{flex:1}
+.wc-ttl{font-family:'Tajawal',sans-serif;font-size:16px;font-weight:900;color:var(--green);margin-bottom:3px}
+.wc-sub{font-size:12.5px;color:var(--mid);line-height:1.65}
+.btn-grn{background:var(--green);color:#fff;border:none;border-radius:var(--r-pill);padding:11px 22px;font-family:'Cairo',sans-serif;font-size:13.5px;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:background .15s,transform .15s,box-shadow .15s;box-shadow:0 4px 14px rgba(30,138,90,.3);flex-shrink:0}
+.btn-grn:hover{background:var(--green-l);transform:translateY(-2px);box-shadow:0 8px 22px rgba(30,138,90,.4)}
+
+/* TRANSPORT */
+#transport{padding:60px 0;background:linear-gradient(158deg,#EBF4FF 0%,#f0f6ff 60%,#fff 100%);position:relative;overflow:hidden}
+#transport::before{content:'';position:absolute;top:-70px;right:-50px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(26,74,138,.06) 0%,transparent 70%);pointer-events:none}
+.tr-in{position:relative;z-index:2}
+.tr-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(26,74,138,.09);border:1px solid rgba(26,74,138,.18);color:var(--navy);border-radius:var(--r-pill);padding:4px 14px;font-size:11px;font-weight:800;margin-bottom:24px}
+.tr-tabs{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+.tr-tab{background:#fff;border:2px solid var(--bdr);border-radius:var(--r-pill);padding:7px 18px;font-family:'Cairo',sans-serif;font-size:12.5px;font-weight:700;color:var(--mid);cursor:pointer;transition:all .15s;white-space:nowrap}
+.tr-tab.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.tr-tab:hover:not(.on){border-color:var(--navy);color:var(--navy)}
+.tr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:580px){.tr-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+@media(min-width:860px){.tr-grid{grid-template-columns:repeat(4,1fr)}}
+.tr-card{background:#fff;border-radius:var(--r-lg);padding:18px 12px;text-align:center;border:2px solid var(--bdr);box-shadow:var(--sh-sm);transition:transform .15s,box-shadow .15s,border-color .15s;cursor:pointer}
+.tr-card:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:var(--blue)}
+.tr-ic{font-size:40px;margin-bottom:8px;display:block;transition:transform .35s var(--ease)}
+.tr-card:hover .tr-ic{transform:scale(1.1) translateY(-2px)}
+.tr-nm{font-size:13.5px;font-weight:800;color:var(--txt);margin-bottom:3px}
+.tr-cap{font-size:11px;color:var(--mid);margin-bottom:7px}
+.tr-tags{display:flex;flex-wrap:wrap;gap:3px;justify-content:center;margin-bottom:10px}
+.tr-tag{font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:var(--r-pill);background:#EBF4FF;color:var(--navy)}
+.tr-pr{font-size:12.5px;font-weight:900;color:var(--navy);margin-bottom:10px}
+.tr-wbtn{width:100%;height:34px;background:var(--wa);color:#fff;border:none;border-radius:var(--r-pill);font-family:'Cairo',sans-serif;font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:background .15s}
+.tr-wbtn:hover{background:#1DA851}
+.tr-note{margin-top:14px;background:#fff;border-radius:var(--r-md);padding:12px 16px;border:1px solid var(--bdr);font-size:12.5px;color:var(--mid);display:flex;gap:9px;align-items:center}
+.tr-pane{display:none}.tr-pane.on{display:block}
+.tr-safety{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);border-radius:var(--r-lg);padding:18px 22px;margin-top:24px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.tr-s-ttl{font-family:'Tajawal',sans-serif;font-size:15px;font-weight:900;color:#fff;flex-shrink:0}
+.tr-bdgs{display:flex;flex-wrap:wrap;gap:8px;flex:1}
+.tr-sbdg{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);border-radius:var(--r-pill);padding:4px 12px;font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;gap:4px}
+
+/* REQUEST FORM */
+#req{background:linear-gradient(150deg,var(--navy) 0%,#062437 100%);padding:56px 0;position:relative;overflow:hidden}
+#req::before{content:'';position:absolute;top:-100px;right:-100px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(230,168,23,.08) 0%,transparent 70%);pointer-events:none}
+.req-w{position:relative;z-index:2;max-width:560px;margin:0 auto}
+.req-hd{text-align:center;margin-bottom:28px}
+.req-ttl{font-family:'Tajawal',sans-serif;font-size:clamp(19px,4.5vw,26px);font-weight:900;color:#fff;margin-bottom:7px}
+.req-sub{font-size:13.5px;color:rgba(255,255,255,.62)}
+.req-card{background:rgba(255,255,255,.97);border-radius:var(--r-xl);padding:24px 18px;box-shadow:var(--sh-lg)}
+@media(min-width:460px){.req-card{padding:32px 34px}}
+.fgrid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:460px){.fgrid{grid-template-columns:1fr 1fr}}
+.fg{display:flex;flex-direction:column;gap:4px}.fg.full{grid-column:1/-1}
+.flb{font-size:12.5px;font-weight:800;color:var(--txt)}.req-m{color:#C0392B}
+.fin,.fsel,.ftx{font-family:'Cairo',sans-serif;font-size:13.5px;color:var(--txt);background:var(--bg);border:1.5px solid var(--bdr);border-radius:var(--r-sm);padding:10px 12px;outline:none;width:100%;direction:rtl;transition:border-color .15s,box-shadow .15s,background .15s}
+.fin:focus,.fsel:focus,.ftx:focus{border-color:var(--navy);background:#fff;box-shadow:0 0 0 3px rgba(11,61,94,.1)}
+.fin.err,.fsel.err,.ftx.err{border-color:#C0392B;box-shadow:0 0 0 3px rgba(192,57,43,.1)}
+.ftx{resize:vertical;min-height:82px;line-height:1.6}
+.ferr{font-size:11.5px;color:#C0392B;font-weight:700;display:none}.ferr.show{display:block}
+.fsub{width:100%;height:50px;background:var(--wa);color:#fff;border:none;border-radius:var(--r-pill);font-family:'Cairo',sans-serif;font-size:15px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;margin-top:7px;box-shadow:0 4px 16px rgba(37,211,102,.38);transition:background .15s,transform .15s}
+.fsub:hover{background:#1DA851;transform:translateY(-2px)}.fsub:active{transform:scale(.99)}
+.fsub.loading{opacity:.7;pointer-events:none}
+.fsub.loading::after{content:'';width:17px;height:17px;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* FOOTER */
+footer{background:#0A1929;color:rgba(255,255,255,.62);padding:48px 0 28px}
+.ft-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-bottom:32px}
+@media(min-width:720px){.ft-grid{grid-template-columns:1.6fr 1fr 1fr}}
+.ft-logo{font-family:'Tajawal',sans-serif;font-size:20px;font-weight:900;color:#fff;display:flex;align-items:center;gap:7px}
+.ft-tag{font-size:10.5px;color:rgba(255,255,255,.38);font-weight:600}
+.ft-about{font-size:12.5px;margin-top:9px;line-height:1.9}
+.ft-loc{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12px;font-weight:700;color:var(--gold-l);background:rgba(230,168,23,.1);border:1px solid rgba(230,168,23,.22);padding:5px 12px;border-radius:var(--r-pill)}
+.ft-wa{display:inline-flex;align-items:center;gap:7px;background:var(--wa);color:#fff;padding:9px 18px;border-radius:var(--r-pill);text-decoration:none;font-size:13px;font-weight:700;margin-top:12px;transition:all .15s}
+.ft-wa:hover{background:#1DA851;transform:translateY(-1px)}
+.ft-htl{font-size:11px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+.ft-lnks{display:flex;flex-direction:column;gap:8px}
+.ft-lnks a{text-decoration:none;font-size:12.5px;color:rgba(255,255,255,.55);transition:color .15s}
+.ft-lnks a:hover{color:#fff}
+hr.ft-div{border:none;border-top:1px solid rgba(255,255,255,.07);margin-bottom:20px}
+.ft-btm{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;font-size:11.5px;color:rgba(255,255,255,.32)}
+
+/* FLOATING WA */
+#wa-fl{position:fixed;bottom:calc(22px + env(safe-area-inset-bottom));left:20px;z-index:9999}
+.wa-fb{width:54px;height:54px;border-radius:50%;background:var(--wa);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.5);transition:transform .15s;position:relative}
+.wa-fb:hover{transform:scale(1.08)}
+.wa-pulse{position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--wa);animation:pulse 2.2s ease-out infinite}
+.wa-p2{animation-delay:1.1s}
+@keyframes pulse{0%{transform:scale(1);opacity:.65}100%{transform:scale(1.6);opacity:0}}
+@media(prefers-reduced-motion:reduce){.wa-pulse{animation:none}}
+.wa-tip{position:absolute;bottom:calc(100% + 8px);left:0;background:var(--txt);color:#fff;font-size:11.5px;font-weight:700;white-space:nowrap;padding:6px 11px;border-radius:var(--r-sm);opacity:0;pointer-events:none;transition:opacity .2s}
+.wa-fb:hover+.wa-tip,.wa-fb:focus-visible+.wa-tip{opacity:1}
+.wa-tip::after{content:'';position:absolute;top:100%;left:16px;border:4px solid transparent;border-top-color:var(--txt)}
+
+/* JOIN MODAL */
+#jbg{position:fixed;inset:0;z-index:1500;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:14px}
+#jbg.open{display:flex}
+.jmod{background:#fff;border-radius:var(--r-xl);width:100%;max-width:540px;max-height:92dvh;overflow-y:auto;box-shadow:var(--sh-lg);animation:mPop .28s var(--ease) both}
+@keyframes mPop{from{opacity:0;transform:scale(.93) translateY(18px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.jm-hd{display:flex;justify-content:space-between;align-items:center;padding:20px 22px 14px;border-bottom:1px solid var(--bdr)}
+.jm-ttl{font-family:'Tajawal',sans-serif;font-size:17px;font-weight:900;color:var(--txt)}
+.jm-cl{background:var(--bg);border:none;width:34px;height:34px;border-radius:50%;font-size:17px;color:var(--mid);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.jm-cl:hover{background:var(--bdr)}
+.jm-bd{padding:20px 22px}
+.jm-types{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:20px}
+.jm-tp{background:var(--bg);border:2px solid var(--bdr);border-radius:var(--r-md);padding:14px 10px;text-align:center;cursor:pointer;font-family:'Cairo',sans-serif;transition:all .15s}
+.jm-tp .jt-ic{font-size:24px;margin-bottom:4px}.jm-tp .jt-lb{font-size:13px;font-weight:800;color:var(--txt)}.jm-tp .jt-sub{font-size:10px;color:var(--soft)}
+.jm-tp:hover{border-color:var(--blue);background:#fff}.jm-tp.sel{border-color:var(--navy);background:#EBF5FB}
+.jm-fg{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:440px){.jm-fg{grid-template-columns:1fr 1fr}}
+.jm-sub{width:100%;height:48px;background:var(--navy);color:#fff;border:none;border-radius:var(--r-pill);font-family:'Cairo',sans-serif;font-size:14.5px;font-weight:900;cursor:pointer;margin-top:7px;display:flex;align-items:center;justify-content:center;gap:7px;transition:background .15s,transform .15s}
+.jm-sub:hover{background:var(--blue);transform:translateY(-1px)}
+.upl-area{border:2px dashed var(--bdr);border-radius:var(--r-md);padding:18px 12px;text-align:center;cursor:pointer;transition:border-color .15s,background .15s;grid-column:1/-1}
+.upl-area:hover{border-color:var(--navy);background:var(--bg)}
+.ua-ic{font-size:26px;margin-bottom:4px}.ua-tx{font-size:12.5px;font-weight:700;color:var(--mid)}.ua-sub{font-size:10.5px;color:var(--soft);margin-top:2px}
+.upl-area input[type="file"]{display:none}
+.prev-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:9px}
+.img-th{width:72px;height:72px;border-radius:var(--r-md);background:var(--bg);border:2px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:22px;overflow:hidden;position:relative;transition:border-color .15s,transform .15s;flex-shrink:0}
+.img-th:hover{border-color:var(--navy);transform:scale(1.04)}
+.img-th img{width:100%;height:100%;object-fit:cover}
+.rm-th{position:absolute;top:-5px;right:-5px;width:19px;height:19px;background:#C0392B;color:#fff;border:2px solid #fff;border-radius:50%;font-size:8.5px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-sm)}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr" role="banner">
+<div class="container">
+<div class="hdr-row">
+  <a href="#" class="logo" aria-label="سكنى – الرئيسية">
+    <svg class="logo-ic" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="40" height="40" rx="10" fill="#0B3D5E"/>
+      <path d="M20 8L32 18V34H24V26H16V34H8V18Z" fill="none" stroke="#E6A817" stroke-width="2" stroke-linejoin="round"/>
+      <rect x="17" y="26" width="6" height="8" rx="1" fill="#E6A817" opacity=".9"/>
+      <rect x="10" y="21" width="4" height="4" rx="1" fill="white" opacity=".8"/>
+      <rect x="26" y="21" width="4" height="4" rx="1" fill="white" opacity=".8"/>
+      <path d="M20 8L32 18M20 8L8 18" stroke="#F5C842" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="20" cy="7" r="2.5" fill="#E6A817"/>
+    </svg>
+    <div class="logo-tx">
+      <div class="logo-ar">سكنى <div class="logo-dot"></div></div>
+      <div class="logo-tag">مجتمعك في بيتك · العبور</div>
+    </div>
+  </a>
+  <div class="hdr-loc">📍 العبور والعبور الجديدة</div>
+  <div class="hdr-srch" role="search">
+    <input type="search" id="hs-in" placeholder="ابحث عن أثاث، أجهزة، صنايعية..." aria-label="بحث" autocomplete="off"/>
+    <span class="s-ic">🔍</span>
+  </div>
+  <nav class="hdr-nav" aria-label="التنقل الرئيسي">
+    <a href="#cats">الفئات</a>
+    <a href="#waste">♻️ مخلفات</a>
+    <a href="#transport">🚛 نقل</a>
+    <a href="#req">اطلب</a>
+    <button class="nav-cta" id="open-join" style="border:none;font-family:'Cairo',sans-serif;font-size:13px;">🏪 انضم</button>
+  </nav>
+  <button class="hbg" id="hbg-btn" aria-label="القائمة" aria-expanded="false" aria-controls="drawer">
+    <div class="hbg-in" aria-hidden="true"><span></span><span></span><span></span></div>
+  </button>
+</div>
+</div>
+<div class="mob-srch">
+  <div class="ms-w">
+    <input type="search" id="ms-in" placeholder="ابحث..." aria-label="بحث" autocomplete="off"/>
+    <span class="s-ic">🔍</span>
+  </div>
+</div>
+</header>
+
+<div class="backdrop" id="backdrop" aria-hidden="true"></div>
+<nav class="drawer" id="drawer" role="dialog" aria-label="القائمة" aria-hidden="true">
+  <div class="drw-hd">
+    <div class="logo-ar" style="font-family:'Tajawal',sans-serif;font-size:18px;font-weight:900;color:var(--navy);">سكنى</div>
+    <button class="drw-cl" id="drw-cl" aria-label="إغلاق">✕</button>
+  </div>
+  <div class="drw-lnks">
+    <a href="#hero"><span>🏠</span> الرئيسية</a>
+    <a href="#cats" data-filter="furniture"><span>🛋️</span> أثاث المنزل</a>
+    <a href="#cats" data-filter="appliances"><span>🔌</span> أجهزة كهربائية</a>
+    <a href="#cats" data-filter="lighting"><span>💡</span> إضاءات</a>
+    <a href="#cats" data-filter="workers"><span>🔧</span> صنايعية وعمال</a>
+    <a href="#waste"><span>♻️</span> إدارة المخلفات</a>
+    <a href="#transport"><span>🚛</span> النقل والمواصلات</a>
+    <a href="#req"><span>📋</span> اطلب خدمة</a>
+  </div>
+  <button class="drw-join" id="drw-join">🏪 انضم كمزود خدمة</button>
+  <a href="https://wa.me/201129724884" target="_blank" rel="noopener" class="drw-wa">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    تواصل معنا
+  </a>
+</nav>
+
+<!-- HERO -->
+<section id="hero" aria-label="القسم الرئيسي">
+  <div class="h-glow h-glow-1" aria-hidden="true"></div>
+  <div class="h-glow h-glow-2" aria-hidden="true"></div>
+  <div class="container">
+  <div class="hero-in">
+    <div class="hero-chip">📍 نخدم حصريًا: العبور &bull; العبور الجديدة &bull; إسكان العبور</div>
+    <h1 class="hero-h1">كل اللي محتاجه لـ<em>بيتك الجديد</em>...<br>في مكان واحد</h1>
+    <p class="hero-sub">أثاث &bull; أجهزة &bull; إضاءة &bull; صنايعية &bull; نقل &bull; ♻️ مخلفات</p>
+    <div class="hero-ctas">
+      <a href="#cats" class="btn-gold">تصفح المنتجات ←</a>
+      <a href="#transport" class="btn-ghost">🚛 خدمات النقل</a>
+      <button class="btn-join-h" id="hero-join">🏪 انضم كمزود</button>
+    </div>
+    <div class="hero-pills" aria-hidden="true">
+      <div class="h-pill" data-filter="furniture"><div class="p-ic">🛋️</div><div class="p-lb">أثاث</div></div>
+      <div class="h-pill" data-filter="appliances"><div class="p-ic">🔌</div><div class="p-lb">أجهزة</div></div>
+      <div class="h-pill" data-filter="lighting"><div class="p-ic">💡</div><div class="p-lb">إضاءة</div></div>
+      <div class="h-pill" data-filter="workers"><div class="p-ic">🔧</div><div class="p-lb">صنايعية</div></div>
+      <div class="h-pill" onclick="document.getElementById('waste').scrollIntoView({behavior:'smooth'})"><div class="p-ic">♻️</div><div class="p-lb">مخلفات</div></div>
+      <div class="h-pill" onclick="document.getElementById('transport').scrollIntoView({behavior:'smooth'})"><div class="p-ic">🚛</div><div class="p-lb">نقل</div></div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-n">500+</div><div class="stat-l">منتج متاح</div></div>
+      <div class="stat"><div class="stat-n">200+</div><div class="stat-l">صنايعي معتمد</div></div>
+      <div class="stat"><div class="stat-n">50+</div><div class="stat-l">سيارة نقل</div></div>
+      <div class="stat"><div class="stat-n">1000+</div><div class="stat-l">ساكن بالعبور</div></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- JOIN BAND -->
+<section id="jband">
+<div class="container">
+<div class="jb-in">
+  <div class="jb-ic" aria-hidden="true">🏪</div>
+  <div class="jb-tx">
+    <div class="jb-ttl">بتبيع أثاث أو أجهزة؟ أو بتشتغل صنايعي أو نقل؟</div>
+    <div class="jb-sub">انضم لأكبر تجمع مزودي خدمات في العبور وعرض خدماتك لآلاف السكان</div>
+  </div>
+  <div class="jb-btns">
+    <button class="btn-navy" id="band-join">✨ سجّل عرضك الآن</button>
+    <a href="https://wa.me/201129724884?text=أريد الانضمام كمزود خدمة في سكنى" target="_blank" rel="noopener" class="btn-wa-o">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      عبر واتساب
+    </a>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="cats" aria-label="الفئات">
+<div class="container">
+  <div class="sec-hd">
+    <div class="sec-eye">استعرض حسب الفئة</div>
+    <h2 class="sec-ttl">إيه اللي محتاجه؟</h2>
+    <p class="sec-sub">اضغط على أي فئة لتصفح العروض المتاحة في العبور</p>
+  </div>
+  <div class="cats-grid" role="list">
+    <button class="cat-card" data-cat="furniture" role="listitem" aria-pressed="false"><div class="cat-strip"></div><div class="cat-ic">🛋️</div><div class="cat-nm">أثاث المنزل</div><div class="cat-bdg">جديد ومستعمل</div><div class="cat-cnt">4 إعلانات</div><span class="cat-arr" aria-hidden="true">←</span></button>
+    <button class="cat-card" data-cat="appliances" role="listitem" aria-pressed="false"><div class="cat-strip"></div><div class="cat-ic">🔌</div><div class="cat-nm">أجهزة كهربائية</div><div class="cat-bdg">مضمون الجودة</div><div class="cat-cnt">4 إعلانات</div><span class="cat-arr" aria-hidden="true">←</span></button>
+    <button class="cat-card" data-cat="lighting" role="listitem" aria-pressed="false"><div class="cat-strip"></div><div class="cat-ic">💡</div><div class="cat-nm">إضاءات حديثة</div><div class="cat-bdg">ديكور عصري</div><div class="cat-cnt">2 إعلانات</div><span class="cat-arr" aria-hidden="true">←</span></button>
+    <button class="cat-card" data-cat="workers" role="listitem" aria-pressed="false"><div class="cat-strip"></div><div class="cat-ic">🔧</div><div class="cat-nm">صنايعية وعمال</div><div class="cat-bdg">معتمدين بالعبور</div><div class="cat-cnt">2 إعلانات</div><span class="cat-arr" aria-hidden="true">←</span></button>
+  </div>
+</div>
+</section>
+
+<!-- LISTINGS -->
+<section id="listings" aria-label="الإعلانات">
+<div class="container">
+  <div class="lst-hd">
+    <h2 class="lst-ttl" id="lst-ttl">جميع الإعلانات</h2>
+    <span class="lst-cnt" id="lst-cnt" aria-live="polite"></span>
+  </div>
+  <div class="lst-grid" id="lst-grid" aria-label="قائمة الإعلانات"></div>
+</div>
+</section>
+
+<!-- WASTE SECTION — SIMPLIFIED -->
+<section id="waste" aria-label="إدارة المخلفات">
+<div class="container">
+<div class="waste-in">
+  <div class="sec-hd">
+    <div class="w-badge">♻️ مبادرة بيئية – العبور</div>
+    <div class="sec-eye grn">إدارة المخلفات المنزلية</div>
+    <h2 class="sec-ttl grn">فصّل مخلفاتك... وساهم في بيئة أنظف</h2>
+    <p class="sec-sub">نتعاون معك لتقليل النفايات — مخلفات ذات قيمة تستحق مكافأة عند التسليم</p>
+  </div>
+
+  <div class="waste-grid" id="waste-grid">
+    <div class="wcard" data-waste="glass" tabindex="0" role="button" aria-pressed="false">
+      <div class="wc-glow"></div><div class="wc-chk" aria-hidden="true">✓</div>
+      <div class="w-ic">🫙</div>
+      <div class="wcard-nm">زجاج</div>
+      <div class="wcard-types">قوارير &bull; أكواب &bull; نوافذ</div>
+    </div>
+    <div class="wcard" data-waste="paper" tabindex="0" role="button" aria-pressed="false">
+      <div class="wc-glow"></div><div class="wc-chk" aria-hidden="true">✓</div>
+      <div class="w-ic">📦</div>
+      <div class="wcard-nm">ورق وكرتون</div>
+      <div class="wcard-types">جرائد &bull; كتب &bull; كراتين</div>
+    </div>
+    <div class="wcard" data-waste="metal" tabindex="0" role="button" aria-pressed="false">
+      <div class="wc-glow"></div><div class="wc-chk" aria-hidden="true">✓</div>
+      <div class="w-ic">🪣</div>
+      <div class="wcard-nm">معادن</div>
+      <div class="wcard-types">علب &bull; حديد &bull; ألومنيوم</div>
+    </div>
+    <div class="wcard" data-waste="plastic" tabindex="0" role="button" aria-pressed="false">
+      <div class="wc-glow"></div><div class="wc-chk" aria-hidden="true">✓</div>
+      <div class="w-ic">🧴</div>
+      <div class="wcard-nm">بلاستيك</div>
+      <div class="wcard-types">زجاجات &bull; أكياس &bull; حاويات</div>
+    </div>
+  </div>
+
+  <div class="waste-info">
+    <div class="wi-ttl">🌿 إزاي الموضوع؟</div>
+    <div class="wi-sub">هدفنا مع سكان العبور هو تقليل النفايات المنزلية من خلال الفصل الصحيح، مما يساهم في بيئة أنظف ويسهّل عمليات إعادة التدوير في منطقتنا.</div>
+    <div class="w-note">
+      <span class="n-ic">💡</span>
+      <span><strong>مخلفات ذات قيمة؟</strong> بعض المواد كالمعادن والورق والبلاستيك لها قيمة سوقية حقيقية عند إعادة التدوير. لو عندك كميات، فريقنا يقيّمها عند الاستلام ويدفعلك مقابل مادي مناسب على الفور.</span>
+    </div>
+    <div class="waste-steps">
+      <div class="wstep"><div class="ws-num">1</div><div><div class="ws-ttl">افصل مخلفاتك</div><div class="ws-txt">خصص كيس منفصل لكل نوع: زجاج، ورق، معادن، بلاستيك</div></div></div>
+      <div class="wstep"><div class="ws-num">2</div><div><div class="ws-ttl">تواصل معنا</div><div class="ws-txt">اختر الأنواع اللي عندك وابعتلنا موقعك عبر واتساب</div></div></div>
+      <div class="wstep"><div class="ws-num">3</div><div><div class="ws-ttl">نجي نستلم</div><div class="ws-txt">فريقنا يجي لبابك خلال 24-48 ساعة ويقيّم المخلفات</div></div></div>
+      <div class="wstep"><div class="ws-num">4</div><div><div class="ws-ttl">بيئة أنظف + مكافأة</div><div class="ws-txt">مواد ذات قيمة؟ تحصل على مقابل مادي فوري ✅</div></div></div>
+    </div>
+  </div>
+
+  <div class="waste-cta-row">
+    <div class="wc-txt">
+      <div class="wc-ttl" id="waste-cta-ttl">📋 اختر نوع مخلفاتك أعلاه</div>
+      <div class="wc-sub" id="waste-cta-sub">اضغط على نوع المخلفات اللي عندك ثم اطلب الاستلام</div>
+    </div>
+    <button class="btn-grn" onclick="sendWasteWA()">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      احجز الاستلام عبر واتساب
+    </button>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- TRANSPORT -->
+<section id="transport" aria-label="النقل والمواصلات">
+<div class="container">
+<div class="tr-in">
+  <div class="sec-hd">
+    <div class="tr-badge">🚛 خدمات النقل المعتمدة</div>
+    <div class="sec-eye nvy">النقل والمواصلات</div>
+    <h2 class="sec-ttl nvy">نقل أثاثك أو وصولك بأمان ✅</h2>
+    <p class="sec-sub">أسطول متكامل من سيارات النقل المتخصصة وعربات الأفراد — معتمدة وبأعلى معايير الأمان</p>
+  </div>
+  <div class="tr-tabs" role="tablist">
+    <button class="tr-tab on" data-pane="moving" role="tab" aria-selected="true">🛋️ نقل الأثاث والمنقولات</button>
+    <button class="tr-tab" data-pane="personal" role="tab" aria-selected="false">🚗 نقل الأفراد</button>
+  </div>
+  <div class="tr-pane on" id="pane-moving">
+    <div class="tr-grid">
+      <div class="tr-card"><span class="tr-ic">🛻</span><div class="tr-nm">بيك أب صغير</div><div class="tr-cap">حتى 1 طن</div><div class="tr-tags"><span class="tr-tag">غرفة صغيرة</span><span class="tr-tag">أجهزة</span></div><div class="tr-pr">من 150 جنيه</div><button class="tr-wbtn" onclick="trWA('بيك أب صغير – حتى 1 طن','150')">احجز الآن</button></div>
+      <div class="tr-card"><span class="tr-ic">🚚</span><div class="tr-nm">ربع نقل</div><div class="tr-cap">حتى 3 طن</div><div class="tr-tags"><span class="tr-tag">غرفتين</span><span class="tr-tag">صالون</span></div><div class="tr-pr">من 280 جنيه</div><button class="tr-wbtn" onclick="trWA('ربع نقل – حتى 3 طن','280')">احجز الآن</button></div>
+      <div class="tr-card"><span class="tr-ic">🚛</span><div class="tr-nm">نص نقل</div><div class="tr-cap">حتى 7 طن</div><div class="tr-tags"><span class="tr-tag">شقة كاملة</span><span class="tr-tag">مكتب</span></div><div class="tr-pr">من 500 جنيه</div><button class="tr-wbtn" onclick="trWA('نص نقل – حتى 7 طن','500')">احجز الآن</button></div>
+      <div class="tr-card"><span class="tr-ic">🏗️</span><div class="tr-nm">نقل كبير</div><div class="tr-cap">حتى 15 طن</div><div class="tr-tags"><span class="tr-tag">فيلا</span><span class="tr-tag">مستودع</span></div><div class="tr-pr">من 900 جنيه</div><button class="tr-wbtn" onclick="trWA('نقل كبير – حتى 15 طن','900')">احجز الآن</button></div>
+    </div>
+    <div class="tr-note"><span style="font-size:18px">ℹ️</span><span>السعر داخل نطاق العبور • الفرد والتغليف بسعر إضافي • متاح 7 أيام من 7 ص حتى 10 م</span></div>
+  </div>
+  <div class="tr-pane" id="pane-personal">
+    <div class="tr-grid">
+      <div class="tr-card"><span class="tr-ic">🚗</span><div class="tr-nm">سيارة خاصة</div><div class="tr-cap">حتى 4 راكبين</div><div class="tr-tags"><span class="tr-tag">مكيفة</span><span class="tr-tag">معتمد</span></div><div class="tr-pr">من 50 جنيه / رحلة</div><button class="tr-wbtn" onclick="trWA('سيارة خاصة – 4 راكبين','50')">احجز الآن</button></div>
+      <div class="tr-card"><span class="tr-ic">🚙</span><div class="tr-nm">SUV فاخر</div><div class="tr-cap">حتى 6 راكبين</div><div class="tr-tags"><span class="tr-tag">تكييف مزدوج</span><span class="tr-tag">جلد</span></div><div class="tr-pr">من 80 جنيه / رحلة</div><button class="tr-wbtn" onclick="trWA('SUV فاخر – 6 راكبين','80')">احجز الآن</button></div>
+      <div class="tr-card"><span class="tr-ic">🚌</span><div class="tr-nm">ميني باص</div><div class="tr-cap">حتى 14 راكب</div><div class="tr-tags"><span class="tr-tag">جماعي</span><span class="tr-tag">مناسبات</span></div><div class="tr-pr">من 200 جنيه / رحلة</div><button class="tr-wbtn" onclick="trWA('ميني باص – 14 راكب','200')">احجز الآن</button></div>
+      <div class="tr-card"><span class="tr-ic">🚎</span><div class="tr-nm">باص كبير</div><div class="tr-cap">حتى 30 راكب</div><div class="tr-tags"><span class="tr-tag">رحلات مدرسية</span><span class="tr-tag">أفراح</span></div><div class="tr-pr">من 450 جنيه / رحلة</div><button class="tr-wbtn" onclick="trWA('باص كبير – 30 راكب','450')">احجز الآن</button></div>
+    </div>
+    <div class="tr-safety">
+      <div class="tr-s-ttl">🛡️ معايير الأمان</div>
+      <div class="tr-bdgs">
+        <div class="tr-sbdg">✅ سائقون مرخصون</div>
+        <div class="tr-sbdg">🔍 فحص دوري</div>
+        <div class="tr-sbdg">📍 تتبع GPS</div>
+        <div class="tr-sbdg">☎️ دعم 24/7</div>
+        <div class="tr-sbdg">🆔 هوية موثقة</div>
+        <div class="tr-sbdg">🚫 ممنوع التدخين</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- REQUEST FORM -->
+<section id="req" aria-label="طلب خدمة">
+<div class="container">
+<div class="req-w">
+  <div class="req-hd">
+    <h2 class="req-ttl">مش لاقي اللي محتاجه؟<br>اطلبه دلوقتي 👇</h2>
+    <p class="req-sub">أخبرنا بطلبك وهنوصلك بأقرب مزود في العبور على طول</p>
+  </div>
+  <div class="req-card">
+    <div class="fgrid">
+      <div class="fg"><label class="flb" for="f-nm">اسمك <span class="req-m">*</span></label><input class="fin" type="text" id="f-nm" placeholder="الاسم الكامل" autocomplete="name"/><span class="ferr" id="e-nm">من فضلك ادخل اسمك</span></div>
+      <div class="fg"><label class="flb" for="f-ph">رقم الواتساب <span class="req-m">*</span></label><input class="fin" type="tel" id="f-ph" placeholder="01xxxxxxxxx" autocomplete="tel"/><span class="ferr" id="e-ph">رقم مصري صحيح مطلوب</span></div>
+      <div class="fg"><label class="flb" for="f-ty">نوع الطلب <span class="req-m">*</span></label>
+        <select class="fsel" id="f-ty"><option value="" disabled selected>اختر نوع الطلب...</option><option>أثاث</option><option>جهاز كهربائي</option><option>إضاءة</option><option>صنايعي</option><option>نقل أثاث</option><option>نقل أفراد</option><option>إدارة مخلفات</option><option>أخرى</option></select>
+        <span class="ferr" id="e-ty">من فضلك اختر نوع الطلب</span>
+      </div>
+      <div class="fg"><label class="flb" for="f-bg">الميزانية</label>
+        <select class="fsel" id="f-bg"><option value="" disabled selected>اختر...</option><option>أقل من 1000 جنيه</option><option>1000 – 5000 جنيه</option><option>5000 – 10000 جنيه</option><option>أكثر من 10000 جنيه</option></select>
+      </div>
+      <div class="fg full"><label class="flb" for="f-ds">وصف طلبك <span class="req-m">*</span></label><textarea class="ftx" id="f-ds" rows="4" placeholder="اكتب تفاصيل طلبك..."></textarea><span class="ferr" id="e-ds">من فضلك اكتب وصف موجز</span></div>
+    </div>
+    <button type="button" class="fsub" id="fsub-btn">
+      <svg viewBox="0 0 24 24" width="19" height="19" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      أرسل طلبك عبر واتساب ←
+    </button>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+<div class="container">
+  <div class="ft-grid">
+    <div>
+      <div class="ft-logo">
+        <svg width="26" height="26" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#0B3D5E"/><path d="M20 8L32 18V34H24V26H16V34H8V18Z" fill="none" stroke="#E6A817" stroke-width="2" stroke-linejoin="round"/><rect x="17" y="26" width="6" height="8" rx="1" fill="#E6A817" opacity=".9"/><circle cx="20" cy="7" r="2.5" fill="#E6A817"/></svg>
+        سكنى <span style="color:var(--gold);font-size:16px">| Sakny</span>
+      </div>
+      <div class="ft-tag">مجتمعك في بيتك</div>
+      <p class="ft-about">منصة سكنى — الوجهة الأولى لسكان العبور<br>أثاث • أجهزة • صنايعية • نقل • ♻️ مخلفات</p>
+      <div class="ft-loc">📍 العبور والعبور الجديدة حصريًا</div>
+      <a href="https://wa.me/201129724884" target="_blank" rel="noopener" class="ft-wa">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        تواصل على واتساب
+      </a>
+    </div>
+    <div>
+      <div class="ft-htl">روابط سريعة</div>
+      <nav class="ft-lnks">
+        <a href="#hero">الرئيسية</a><a href="#cats">الفئات</a><a href="#listings">الإعلانات</a>
+        <a href="#waste">♻️ إدارة المخلفات</a><a href="#transport">🚛 النقل</a>
+        <a href="#req">اطلب خدمة</a><a href="#" id="ft-join">انضم كمزود</a>
+      </nav>
+    </div>
+    <div>
+      <div class="ft-htl">الخدمات</div>
+      <nav class="ft-lnks">
+        <a href="#cats">🛋️ أثاث المنزل</a><a href="#cats">🔌 أجهزة كهربائية</a>
+        <a href="#cats">💡 إضاءات</a><a href="#cats">🔧 صنايعية</a>
+        <a href="#waste">♻️ مخلفات</a><a href="#transport">🚛 نقل وتوصيل</a>
+      </nav>
+    </div>
+  </div>
+  <hr class="ft-div"/>
+  <div class="ft-btm">
+    <span>© 2025 سكنى – جميع الحقوق محفوظة</span>
+    <span>صُنع بـ ❤️ لسكان العبور والعبور الجديدة</span>
+  </div>
+</div>
+</footer>
+
+<!-- FLOATING WA -->
+<div id="wa-fl">
+  <button class="wa-fb" onclick="window.open('https://wa.me/201129724884','_blank')" aria-label="تواصل معنا">
+    <div class="wa-pulse" aria-hidden="true"></div><div class="wa-pulse wa-p2" aria-hidden="true"></div>
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </button>
+  <div class="wa-tip" aria-hidden="true">تواصل معنا الآن</div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lb" role="dialog" aria-label="عارض الصور" aria-modal="true">
+  <div class="lb-w" id="lb-w"><div class="lb-ldr" id="lb-ldr"></div></div>
+  <button class="lb-cl" id="lb-cl" aria-label="إغلاق">✕</button>
+  <div class="lb-ctr" id="lb-ctr" aria-live="polite"></div>
+  <button class="lb-nav lb-prev" id="lb-prev" aria-label="التالي">›</button>
+  <button class="lb-nav lb-next" id="lb-next" aria-label="السابق">‹</button>
+  <button class="lb-wa" id="lb-wa">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    تواصل لهذا المنتج
+  </button>
+</div>
+
+<!-- JOIN MODAL -->
+<div id="jbg" role="dialog" aria-modal="true" aria-label="انضم كمزود خدمة">
+<div class="jmod">
+  <div class="jm-hd">
+    <div class="jm-ttl">🏪 سجّل عرضك على سكنى</div>
+    <button class="jm-cl" id="jm-cl" aria-label="إغلاق">✕</button>
+  </div>
+  <div class="jm-bd">
+    <p style="font-size:13.5px;color:var(--mid);margin-bottom:16px;line-height:1.7">اختر نوع تسجيلك وأرسل تفاصيل عرضك — هنراجعه ونضيفه خلال 24 ساعة ✅</p>
+    <div class="jm-types" id="jm-types">
+      <div class="jm-tp sel" data-type="seller"><div class="jt-ic">🛋️</div><div class="jt-lb">بائع منتج</div><div class="jt-sub">أثاث / أجهزة / إضاءة</div></div>
+      <div class="jm-tp" data-type="worker"><div class="jt-ic">🔧</div><div class="jt-lb">صنايعي / عامل</div><div class="jt-sub">سباك / كهربائي / نقاش</div></div>
+      <div class="jm-tp" data-type="transport"><div class="jt-ic">🚛</div><div class="jt-lb">مزود نقل</div><div class="jt-sub">نقل أثاث / أفراد</div></div>
+      <div class="jm-tp" data-type="waste"><div class="jt-ic">♻️</div><div class="jt-lb">مخلفات</div><div class="jt-sub">تجميع وإعادة تدوير</div></div>
+    </div>
+    <div class="jm-fg">
+      <div class="fg"><label class="flb" for="jf-nm">اسمك <span class="req-m">*</span></label><input class="fin" type="text" id="jf-nm" placeholder="الاسم الكامل"/><span class="ferr" id="ej-nm">مطلوب</span></div>
+      <div class="fg"><label class="flb" for="jf-ph">رقم الواتساب <span class="req-m">*</span></label><input class="fin" type="tel" id="jf-ph" placeholder="01xxxxxxxxx"/><span class="ferr" id="ej-ph">رقم غير صحيح</span></div>
+      <div class="fg"><label class="flb" for="jf-tl">اسم المنتج / الخدمة <span class="req-m">*</span></label><input class="fin" type="text" id="jf-tl" placeholder="مثل: غسالة LG 9 كيلو"/><span class="ferr" id="ej-tl">مطلوب</span></div>
+      <div class="fg"><label class="flb" for="jf-pr">السعر</label><input class="fin" type="text" id="jf-pr" placeholder="مثل: 12,000 جنيه أو بالاتفاق"/></div>
+      <div class="fg"><label class="flb" for="jf-ct">الفئة <span class="req-m">*</span></label>
+        <select class="fsel" id="jf-ct"><option value="" disabled selected>اختر...</option><option value="furniture">أثاث</option><option value="appliances">أجهزة</option><option value="lighting">إضاءة</option><option value="workers">صنايعي</option><option value="transport">نقل</option><option value="waste">مخلفات</option></select>
+        <span class="ferr" id="ej-ct">مطلوب</span>
+      </div>
+      <div class="fg"><label class="flb" for="jf-ar">المنطقة</label><input class="fin" type="text" id="jf-ar" placeholder="مثل: العبور الجديدة"/></div>
+      <div class="fg full"><label class="flb" for="jf-ds">وصف قصير <span class="req-m">*</span></label><textarea class="ftx" id="jf-ds" rows="3" placeholder="وصف المنتج أو الخدمة..."></textarea><span class="ferr" id="ej-ds">مطلوب</span></div>
+      <div class="fg full">
+        <label class="flb">📷 صور (اختياري)</label>
+        <div class="upl-area" id="upl-zone"><div class="ua-ic">📸</div><div class="ua-tx">اضغط لرفع الصور</div><div class="ua-sub">JPG / PNG – حتى 5 صور</div><input type="file" id="jf-imgs" accept="image/*" multiple/></div>
+        <div class="prev-row" id="jf-prev"></div>
+      </div>
+    </div>
+    <button class="jm-sub" id="jm-sub" type="button">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      أرسل طلب الانضمام عبر واتساب
+    </button>
+  </div>
+</div>
+</div>
+
+<script>
+'use strict';
+const WA='201129724884';
+const waU=m=>'https://wa.me/'+WA+'?text='+encodeURIComponent(m.trim());
+
+const PRODUCTS=[
+  {id:1,cat:'furniture',title:'غرفة نوم كاملة مستعملة – نظيفة جداً',cond:'مستعمل',cc:'cond-used',price:'8,500 جنيه',loc:'العبور الجديدة',rt:4,rv:12,ic:'🛏️',imgs:[{t:'url',v:'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80'},{t:'url',v:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80'},{t:'url',v:'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80'}]},
+  {id:2,cat:'furniture',title:'طقم صالون جديد – 7 قطع نيو كلاسيك',cond:'جديد',cc:'cond-new',price:'22,000 جنيه',loc:'العبور',rt:5,rv:8,ic:'🛋️',imgs:[{t:'url',v:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80'},{t:'url',v:'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80'}]},
+  {id:3,cat:'furniture',title:'مكتبة خشب زان بـ 5 أرفف – تفصيل',cond:'جديد',cc:'cond-new',price:'3,200 جنيه',loc:'إسكان العبور',rt:4,rv:5,ic:'📚',imgs:[{t:'url',v:'https://images.unsplash.com/photo-1594620302200-9a762244a156?w=800&q=80'}]},
+  {id:4,cat:'furniture',title:'سرير أطفال مستعمل مع مرتبة',cond:'مستعمل',cc:'cond-used',price:'1,800 جنيه',loc:'العبور الجديدة',rt:3,rv:3,ic:'🛏️',imgs:[{t:'url',v:'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&q=80'}]},
+  {id:5,cat:'appliances',title:'ثلاجة سامسونج نوفروست 450 لتر',cond:'جديد',cc:'cond-new',price:'18,500 جنيه',loc:'العبور',rt:5,rv:21,ic:'❄️',imgs:[{t:'url',v:'https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=800&q=80'},{t:'url',v:'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&q=80'}]},
+  {id:6,cat:'appliances',title:'غسالة LG أوتوماتيك 9 كيلو – بها كفالة',cond:'جديد',cc:'cond-new',price:'14,200 جنيه',loc:'العبور',rt:5,rv:17,ic:'🌀',imgs:[{t:'url',v:'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=800&q=80'}]},
+  {id:7,cat:'appliances',title:'تكييف كارير 1.5 حصان – استعمال سنتين',cond:'مستعمل',cc:'cond-used',price:'6,500 جنيه',loc:'العبور الجديدة',rt:4,rv:9,ic:'❄️',imgs:[{t:'url',v:'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80'}]},
+  {id:8,cat:'appliances',title:'شاشة Samsung 55 بوصة 4K QLED',cond:'جديد',cc:'cond-new',price:'25,000 جنيه',loc:'إسكان العبور',rt:5,rv:14,ic:'📺',imgs:[{t:'url',v:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&q=80'},{t:'url',v:'https://images.unsplash.com/photo-1461151304267-38535e780c79?w=800&q=80'}]},
+  {id:9,cat:'lighting',title:'نجفة LED حديثة – ذهبي وأبيض 80 سم',cond:'جديد',cc:'cond-new',price:'2,400 جنيه',loc:'العبور الجديدة',rt:4,rv:6,ic:'💫',imgs:[{t:'url',v:'https://images.unsplash.com/photo-1513506003901-1e6a35c2a2da?w=800&q=80'}]},
+  {id:10,cat:'lighting',title:'إضاءة ممر LED ذكية – متوافقة Alexa',cond:'جديد',cc:'cond-new',price:'890 جنيه',loc:'العبور',rt:4,rv:11,ic:'💡',imgs:[{t:'url',v:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80'}]},
+  {id:11,cat:'workers',title:'سباك معتمد – كشف وإصلاح فوري',cond:'خدمة',cc:'cond-svc',price:'اتصل للسعر',loc:'العبور والعبور الجديدة',rt:5,rv:34,ic:'🔧',wk:'أحمد حسن',imgs:[{t:'url',v:'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&q=80'}]},
+  {id:12,cat:'workers',title:'كهربائي خبرة 10 سنوات – توصيلات وصيانة',cond:'خدمة',cc:'cond-svc',price:'اتصل للسعر',loc:'جميع مناطق العبور',rt:5,rv:28,ic:'⚡',wk:'محمد السيد',imgs:[{t:'url',v:'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80'}]}
+];
+const CATNM={furniture:'أثاث المنزل',appliances:'أجهزة كهربائية',lighting:'إضاءات حديثة',workers:'صنايعية وعمال'};
+
+let activeF='all',srchQ='',srchT=null;
+const stars=n=>Array.from({length:5},(_,i)=>i<n?'★':'☆').join('');
+
+/* LIGHTBOX */
+let lbImgs=[],lbIdx=0,lbWaUrl='',lbTtl='';
+function openLb(p,si=0){
+  lbImgs=p.imgs;lbIdx=si;lbTtl=p.title;
+  const link=location.origin+location.pathname+'#product-'+p.id;
+  lbWaUrl=waU(`مرحباً! أنا مهتم بهذا العرض من سكنى 🏠\n📦 ${p.title}\n💰 ${p.price}\n📍 ${p.loc}\n🔗 ${link}`);
+  document.body.style.overflow='hidden';renderLb();
+  const lb=document.getElementById('lb');lb.classList.add('open');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>lb.classList.add('vis')));
+  document.getElementById('lb-cl').focus();
+}
+function closeLb(){
+  const lb=document.getElementById('lb');lb.classList.remove('vis');
+  setTimeout(()=>{lb.classList.remove('open');document.body.style.overflow=''},220);
+}
+function renderLb(){
+  const w=document.getElementById('lb-w'),ldr=document.getElementById('lb-ldr'),
+        ctr=document.getElementById('lb-ctr'),waB=document.getElementById('lb-wa'),
+        prev=document.getElementById('lb-prev'),next=document.getElementById('lb-next'),
+        img=lbImgs[lbIdx],multi=lbImgs.length>1;
+  if(multi){prev.removeAttribute('hidden');next.removeAttribute('hidden')}else{prev.setAttribute('hidden','');next.setAttribute('hidden','')}
+  ctr.textContent=multi?`${lbIdx+1} / ${lbImgs.length}`:'';
+  waB.onclick=()=>window.open(lbWaUrl,'_blank');
+  w.querySelectorAll('img,.lb-em').forEach(e=>e.remove());ldr.classList.remove('hidden');
+  if(img.t==='url'){
+    const el=document.createElement('img');el.alt=lbTtl;el.draggable=false;w.appendChild(el);
+    const ok=()=>{el.classList.add('lb-ok');ldr.classList.add('hidden')};
+    el.src=img.v;
+    if(el.complete&&el.naturalWidth)ok();
+    else{el.addEventListener('load',ok);el.addEventListener('error',()=>{ldr.classList.add('hidden');el.remove();const fb=document.createElement('div');fb.className='lb-em';fb.textContent='🖼️';w.appendChild(fb)})}
+  }else{ldr.classList.add('hidden');const fb=document.createElement('div');fb.className='lb-em';fb.textContent=img.v;w.appendChild(fb)}
+}
+(()=>{let tx=0,ok=false;const lb=document.getElementById('lb');
+  lb.addEventListener('touchstart',e=>{if(e.touches.length!==1)return;tx=e.touches[0].clientX;ok=true},{passive:true});
+  lb.addEventListener('touchend',e=>{if(!ok)return;ok=false;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)<50)return;lbIdx=dx<0?(lbIdx+1)%lbImgs.length:(lbIdx-1+lbImgs.length)%lbImgs.length;renderLb()},{passive:true});
+  lb.addEventListener('touchmove',e=>e.preventDefault(),{passive:false});
+})();
+document.getElementById('lb-cl').addEventListener('click',closeLb);
+document.getElementById('lb-prev').addEventListener('click',()=>{lbIdx=(lbIdx+1)%lbImgs.length;renderLb()});
+document.getElementById('lb-next').addEventListener('click',()=>{lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;renderLb()});
+document.getElementById('lb').addEventListener('click',e=>{if(e.target===document.getElementById('lb')||e.target===document.getElementById('lb-w'))closeLb()});
+document.addEventListener('keydown',e=>{if(!document.getElementById('lb').classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowRight'){lbIdx=(lbIdx+1)%lbImgs.length;renderLb()}if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;renderLb()}});
+
+/* CARD HTML */
+function cardHTML(p){
+  const nm=CATNM[p.cat]||'',link=location.origin+location.pathname+'#product-'+p.id;
+  const msg=`مرحباً! أنا مهتم بهذا العرض من سكنى 🏠\n📦 ${p.title}\n💰 ${p.price}\n📍 ${p.loc}\n🏷️ ${nm}\n🔗 ${link}`;
+  const url=waU(msg);
+  const prH=p.price==='اتصل للسعر'?`<span class="price-call">📞 اتصل للسعر</span>`:`<div class="card-price">${p.price}</div>`;
+  const fi=p.imgs[0],cnt=p.imgs.length;
+  const wkB=p.cat==='workers'&&p.wk?`<div class="wk-badge">👤 ${p.wk}</div>`:'';
+  const dots=cnt>1?`<div class="card-dots">${p.imgs.map((_,i)=>`<div class="card-dot${i===0?' on':''}"></div>`).join('')}</div>`:'';
+  const imgB=fi.t==='url'?`<div class="card-sk"></div><div class="card-iw ${p.cat}"><span class="fb-ic">${p.ic}</span><img src="${fi.v}" alt="${p.title}" loading="lazy"/></div>`:`<div class="card-iw ${p.cat}">${fi.v}</div>`;
+  return `<article class="lcard" id="product-${p.id}" data-id="${p.id}">
+    <div class="card-imgs" role="button" tabindex="0" aria-label="عرض صور ${p.title}" data-pid="${p.id}">
+      ${imgB}${wkB}${cnt>1?`<div class="card-ctr">📷 ${cnt}</div>`:''}${dots}
+      <span class="cond-badge ${p.cc}">${p.cond}</span>
+    </div>
+    <div class="card-body">
+      <h3 class="card-ttl">${p.title}</h3>
+      <div class="card-meta"><span class="cat-pill ${p.cat}">${nm}</span></div>
+      <div class="card-meta"><span class="loc-tag">📍 ${p.loc}</span></div>
+      <div class="card-meta"><span class="stars" aria-label="تقييم ${p.rt}">${stars(p.rt)}</span><span class="rev-cnt">(${p.rv})</span></div>
+      ${prH}
+    </div>
+    <button class="wa-cbtn" data-url="${url}" data-pid="${p.id}" aria-label="تواصل بخصوص ${p.title}">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      تواصل عبر واتساب
+    </button>
+  </article>`;
+}
+
+async function handleWaBtn(btn){
+  const url=btn.dataset.url,pid=+btn.dataset.pid,p=PRODUCTS.find(x=>x.id===pid);
+  if(!p){window.open(url,'_blank');return}
+  const fi=p.imgs[0];
+  if(fi&&fi.t==='url'&&navigator.share&&navigator.canShare){
+    try{const res=await fetch(fi.v);const blob=await res.blob();const ext=blob.type.includes('png')?'png':'jpg';const file=new File([blob],`sakny-${p.id}.${ext}`,{type:blob.type});const sd={text:decodeURIComponent(url.split('?text=')[1]),files:[file]};if(navigator.canShare(sd)){await navigator.share(sd);return}}catch(e){if(e.name==='AbortError')return}
+  }
+  window.open(url,'_blank');
+}
+
+/* RENDER */
+function render(){
+  const grid=document.getElementById('lst-grid'),ttl=document.getElementById('lst-ttl'),cnt=document.getElementById('lst-cnt');
+  const q=srchQ.trim().toLowerCase();
+  const list=PRODUCTS.filter(p=>(activeF==='all'||p.cat===activeF)&&(!q||p.title.toLowerCase().includes(q)||p.loc.toLowerCase().includes(q)||(CATNM[p.cat]||'').toLowerCase().includes(q)));
+  ttl.textContent=activeF==='all'?(q?`نتائج: "${srchQ}"`:'جميع الإعلانات'):CATNM[activeF];
+  grid.classList.add('fading');
+  requestAnimationFrame(()=>setTimeout(()=>{
+    if(!list.length){
+      grid.innerHTML=`<div class="empty-st"><div class="empty-ic">🔍</div><div class="empty-ttl">لم نجد نتائج</div><div class="empty-sub">جرب كلمات مختلفة أو اطلب خدمة مخصصة</div><a href="${waU('مش لاقي اللي محتاجه، محتاج مساعدة')}" target="_blank" rel="noopener" class="btn-gold" style="display:inline-flex;margin:0 auto;">اطلبها على واتساب ←</a></div>`;
+    }else{
+      grid.innerHTML=list.map(cardHTML).join('');
+      grid.querySelectorAll('.card-iw img').forEach(img=>{
+        const done=()=>{img.classList.add('loaded');img.closest('.card-imgs')?.querySelector('.card-sk')?.remove();img.closest('.card-iw')?.querySelector('.fb-ic')?.remove()};
+        if(img.complete&&img.naturalWidth)done();else img.addEventListener('load',done);
+        img.addEventListener('error',()=>img.remove());
+      });
+      grid.querySelectorAll('.card-imgs').forEach(ci=>{
+        const pid=+ci.dataset.pid,p=PRODUCTS.find(x=>x.id===pid);if(!p)return;
+        ci.querySelectorAll('.card-dot').forEach((d,i)=>{d.addEventListener('click',e=>{e.stopPropagation();ci.querySelectorAll('.card-dot').forEach(dd=>dd.classList.remove('on'));d.classList.add('on');const el=ci.querySelector('.card-iw img');if(!el)return;el.classList.remove('loaded');el.src=p.imgs[i].v;el.onload=()=>el.classList.add('loaded')})});
+        const h=e=>{if(e.target.classList.contains('card-dot'))return;e.preventDefault();openLb(p,0)};
+        ci.addEventListener('click',h);ci.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')h(e)});
+      });
+      grid.querySelectorAll('.wa-cbtn').forEach(b=>b.addEventListener('click',()=>handleWaBtn(b)));
+    }
+    cnt.textContent=list.length?`${list.length} إعلان`:'';
+    grid.classList.remove('fading');
+  },150));
+}
+
+/* CATS */
+function initCats(){
+  document.querySelectorAll('.cat-card,.h-pill[data-filter]').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const cat=el.dataset.filter||el.dataset.cat;if(!cat)return;
+      activeF=activeF===cat?'all':cat;
+      document.querySelectorAll('.cat-card').forEach(c=>{const on=c.dataset.cat===activeF;c.classList.toggle('on',on);c.setAttribute('aria-pressed',String(on))});
+      document.getElementById('listings').scrollIntoView({behavior:'smooth',block:'start'});render();
+    });
+  });
+}
+
+/* SEARCH */
+function initSearch(){
+  const h=v=>{clearTimeout(srchT);srchT=setTimeout(()=>{srchQ=v;render()},280)};
+  const hs=document.getElementById('hs-in'),ms=document.getElementById('ms-in');
+  hs.addEventListener('input',e=>{ms.value=e.target.value;h(e.target.value)});
+  ms.addEventListener('input',e=>{hs.value=e.target.value;h(e.target.value)});
+}
+
+/* DRAWER */
+function initDrawer(){
+  const hbg=document.getElementById('hbg-btn'),bg=document.getElementById('backdrop'),dr=document.getElementById('drawer'),cl=document.getElementById('drw-cl');
+  const open=()=>{dr.classList.add('open');bg.classList.add('on');hbg.classList.add('open');hbg.setAttribute('aria-expanded','true');dr.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';cl.focus()};
+  const close=()=>{dr.classList.remove('open');bg.classList.remove('on');hbg.classList.remove('open');hbg.setAttribute('aria-expanded','false');dr.setAttribute('aria-hidden','true');document.body.style.overflow='';hbg.focus()};
+  hbg.addEventListener('click',open);bg.addEventListener('click',close);cl.addEventListener('click',close);
+  dr.querySelectorAll('.drw-lnks a').forEach(a=>a.addEventListener('click',close));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dr.classList.contains('open'))close()});
+  document.getElementById('drw-join').addEventListener('click',()=>{close();openJoin()});
+}
+
+/* HEADER SCROLL */
+function initHdr(){
+  const h=document.getElementById('hdr');let t=false;
+  window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{h.classList.toggle('scrolled',window.scrollY>50);t=false});t=true}},{passive:true});
+}
+
+/* TRANSPORT TABS */
+function initTr(){
+  document.querySelectorAll('.tr-tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      document.querySelectorAll('.tr-tab').forEach(t=>{t.classList.remove('on');t.setAttribute('aria-selected','false')});
+      tab.classList.add('on');tab.setAttribute('aria-selected','true');
+      document.querySelectorAll('.tr-pane').forEach(p=>p.classList.remove('on'));
+      document.getElementById('pane-'+tab.dataset.pane).classList.add('on');
+    });
+  });
+}
+function trWA(type,price){window.open(waU(`مرحباً! أريد حجز خدمة النقل من سكنى 🚛\nالمركبة: ${type}\nمن: ${price} جنيه\nأرجو التواصل لتأكيد الموعد ✅`),'_blank')}
+
+/* WASTE */
+const WNMS={glass:'زجاج',paper:'ورق وكرتون',metal:'معادن',plastic:'بلاستيك'};
+let selW=[];
+function updateWCTA(){
+  const ttl=document.getElementById('waste-cta-ttl'),sub=document.getElementById('waste-cta-sub');
+  if(!selW.length){ttl.textContent='📋 اختر نوع مخلفاتك أعلاه';sub.textContent='اضغط على نوع المخلفات اللي عندك ثم اطلب الاستلام';return}
+  ttl.textContent=`♻️ تم اختيار: ${selW.map(k=>WNMS[k]).join(' + ')}`;
+  sub.textContent='اضغط زر الحجز وسيتصل بك فريقنا لترتيب الاستلام';
+}
+function sendWasteWA(){
+  if(!selW.length){window.open(waU('مرحباً! أريد الاستفسار عن خدمة إدارة المخلفات بالعبور ♻️'),'_blank');return}
+  const types=selW.map(k=>WNMS[k]).join(' — ');
+  window.open(waU(`مرحباً! أريد تسليم مخلفات منزلية بالعبور 🌿\nالأنواع: ${types}\n\nأرجو الإبلاغ بموعد المرور. إن كانت بعض المواد ذات قيمة يتم التقييم عند الاستلام ✅`),'_blank');
+}
+function initWaste(){
+  document.querySelectorAll('.wcard').forEach(c=>{
+    c.addEventListener('click',()=>{const t=c.dataset.waste;if(c.classList.contains('sel')){c.classList.remove('sel');c.setAttribute('aria-pressed','false');selW=selW.filter(x=>x!==t)}else{c.classList.add('sel');c.setAttribute('aria-pressed','true');selW.push(t)}updateWCTA()});
+    c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();c.click()}});
+  });
+}
+
+/* FORM */
+function initForm(){
+  const phR=/^(010|011|012|015)\d{8}$/;
+  const sE=(fid,eid,bad)=>{document.getElementById(fid).classList.toggle('err',bad);document.getElementById(eid).classList.toggle('show',bad);return!bad};
+  const val=()=>{const n=document.getElementById('f-nm').value.trim(),ph=document.getElementById('f-ph').value.trim().replace(/\s/g,''),ty=document.getElementById('f-ty').value,d=document.getElementById('f-ds').value.trim();let ok=true;ok=sE('f-nm','e-nm',!n)&&ok;ok=sE('f-ph','e-ph',!phR.test(ph))&&ok;ok=sE('f-ty','e-ty',!ty)&&ok;ok=sE('f-ds','e-ds',d.length<5)&&ok;return ok};
+  [['f-nm','e-nm',el=>!el.value.trim()],['f-ph','e-ph',el=>!/^(010|011|012|015)\d{8}$/.test(el.value.trim().replace(/\s/g,''))],['f-ty','e-ty',el=>!el.value],['f-ds','e-ds',el=>el.value.trim().length<5]].forEach(([fi,ei,chk])=>{document.getElementById(fi).addEventListener('blur',e=>sE(fi,ei,chk(e.target)))});
+  document.getElementById('fsub-btn').addEventListener('click',()=>{
+    if(!val()){document.querySelector('.fin.err,.fsel.err,.ftx.err')?.scrollIntoView({behavior:'smooth',block:'center'});return}
+    const btn=document.getElementById('fsub-btn');btn.classList.add('loading');
+    const n=document.getElementById('f-nm').value.trim(),ph=document.getElementById('f-ph').value.trim(),ty=document.getElementById('f-ty').value,d=document.getElementById('f-ds').value.trim(),bg=document.getElementById('f-bg').value;
+    const msg=`مرحباً! طلب جديد من سكنى 🏠\nالاسم: ${n}\nالواتساب: ${ph}\nالنوع: ${ty}\nالوصف: ${d}`+(bg?`\nالميزانية: ${bg}`:'')+'\n\nشكراً ✅';
+    setTimeout(()=>{btn.classList.remove('loading');window.open(waU(msg),'_blank')},550);
+  });
+}
+
+/* JOIN MODAL */
+function openJoin(){document.getElementById('jbg').classList.add('open');document.body.style.overflow='hidden';document.getElementById('jf-nm').focus()}
+function closeJoin(){document.getElementById('jbg').classList.remove('open');document.body.style.overflow=''}
+function initJoin(){
+  ['open-join','hero-join','band-join'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('click',openJoin)});
+  document.getElementById('ft-join').addEventListener('click',e=>{e.preventDefault();openJoin()});
+  document.getElementById('jm-cl').addEventListener('click',closeJoin);
+  document.getElementById('jbg').addEventListener('click',e=>{if(e.target===document.getElementById('jbg'))closeJoin()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('jbg').classList.contains('open'))closeJoin()});
+  document.getElementById('jm-types').querySelectorAll('.jm-tp').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.jm-tp').forEach(x=>x.classList.remove('sel'));b.classList.add('sel')})});
+  const zone=document.getElementById('upl-zone'),inp=document.getElementById('jf-imgs'),prev=document.getElementById('jf-prev');let files=[];
+  zone.addEventListener('click',()=>inp.click());
+  inp.addEventListener('change',()=>{[...inp.files].forEach(f=>{if(files.length>=5)return;files.push(f);const r=new FileReader();r.onload=ev=>{const th=document.createElement('div');th.className='img-th';const i=files.length-1;th.innerHTML=`<img src="${ev.target.result}" alt=""/><button class="rm-th" data-i="${i}" aria-label="حذف">✕</button>`;prev.appendChild(th);th.querySelector('.rm-th').addEventListener('click',e=>{e.stopPropagation();files.splice(+e.target.dataset.i,1);th.remove();prev.querySelectorAll('.rm-th').forEach((b,j)=>b.dataset.i=j)})};r.readAsDataURL(f)});inp.value=''});
+  document.getElementById('jm-sub').addEventListener('click',async()=>{
+    const phR=/^(010|011|012|015)\d{8}$/,sE=(fi,ei,bad)=>{document.getElementById(fi).classList.toggle('err',bad);document.getElementById(ei).classList.toggle('show',bad);if(bad)ok=false};
+    let ok=true;const n=document.getElementById('jf-nm').value.trim(),ph=document.getElementById('jf-ph').value.trim().replace(/\s/g,''),tl=document.getElementById('jf-tl').value.trim(),cat=document.getElementById('jf-ct').value,d=document.getElementById('jf-ds').value.trim();
+    sE('jf-nm','ej-nm',!n);sE('jf-ph','ej-ph',!phR.test(ph));sE('jf-tl','ej-tl',!tl);sE('jf-ct','ej-ct',!cat);sE('jf-ds','ej-ds',d.length<5);if(!ok)return;
+    const pr=document.getElementById('jf-pr').value.trim(),ar=document.getElementById('jf-ar').value.trim();
+    const selTp=document.querySelector('.jm-tp.sel')?.dataset.type||'seller';
+    const tL={seller:'بائع منتج',worker:'صنايعي',transport:'نقل',waste:'مخلفات'};
+    const cL={furniture:'أثاث',appliances:'أجهزة',lighting:'إضاءة',workers:'صنايعي',transport:'نقل',waste:'مخلفات'};
+    const msgTx=`🏪 طلب انضمام – سكنى\nالنوع: ${tL[selTp]}\nالاسم: ${n}\nالواتساب: ${ph}\nالعرض: ${tl}\nالفئة: ${cL[cat]||cat}\n`+(pr?`السعر: ${pr}\n`:'')+(ar?`المنطقة: ${ar}\n`:'')+`الوصف: ${d}\n\nشكراً ✅`;
+    const btn=document.getElementById('jm-sub');btn.disabled=true;btn.style.opacity='.7';
+    if(files.length&&navigator.canShare){try{const sf=files.map((f,i)=>new File([f],`sakny-${i+1}.${f.name.split('.').pop()||'jpg'}`,{type:f.type}));const sd={text:msgTx,files:sf};if(navigator.canShare(sd)){closeJoin();await navigator.share(sd);btn.disabled=false;btn.style.opacity='';return}}catch(e){if(e.name==='AbortError'){btn.disabled=false;btn.style.opacity='';return}}}
+    closeJoin();btn.disabled=false;btn.style.opacity='';window.open(waU(msgTx),'_blank');
+  });
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  render();initCats();initSearch();initDrawer();initHdr();initTr();initWaste();initForm();initJoin();
+  const hash=location.hash;
+  if(hash?.startsWith('#product-')){const pid=hash.replace('#product-','');setTimeout(()=>{const el=document.getElementById(`product-${pid}`);if(!el)return;el.scrollIntoView({behavior:'smooth',block:'center'});el.style.transition='box-shadow .3s,transform .3s';el.style.boxShadow='0 0 0 3px var(--gold),0 12px 40px rgba(230,168,23,.3)';el.style.transform='scale(1.02)';setTimeout(()=>{el.style.boxShadow='';el.style.transform=''},2000)},500)}
+});
+</script>
+</body>
+</html>
